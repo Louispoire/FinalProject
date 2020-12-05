@@ -46,10 +46,10 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="533,69,0,0" x:Name="searchBox" VerticalAlignment="Top" Width="196" />
 
         <!--Buttons-->
-        <Button Content="SAVE" Height="33" HorizontalAlignment="Left" Margin="326,87,0,0" x:Name="SaveBtn" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click" />
+        <Button Content="CREATE" Height="33" HorizontalAlignment="Left" Margin="326,87,0,0" x:Name="SaveBtn" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click" />
         <Button Content="DELETE" Height="33" HorizontalAlignment="Left" Margin="533,387,0,0" x:Name="DeleteBtn" VerticalAlignment="Top" Width="75" Click="DeleteBtn_Click" />
         <Button Content="EDIT" Height="33" HorizontalAlignment="Left" Margin="654,387,0,0" x:Name="EditBtn" VerticalAlignment="Top" Width="75" Click="EditBtn_Click" />
-        <Button Content="NEW" Height="33" HorizontalAlignment="Left" Margin="326,40,0,0" x:Name="NewBtn" VerticalAlignment="Top" Width="75" Click="NewBtn_Click" />
+        <Button Content="CLEAR FORM" Height="33" HorizontalAlignment="Left" Margin="326,40,0,0" x:Name="NewBtn" VerticalAlignment="Top" Width="75" Click="NewBtn_Click" />
         <Button Content="SEARCH" Height="33" HorizontalAlignment="Left" Margin="592,106,0,0" x:Name="SearchButton" VerticalAlignment="Top" Width="75" Click="Search_Click" />
         <Border BorderThickness="5" Height="489" HorizontalAlignment="Left" x:Name="border1" VerticalAlignment="Top" Width="763"/>
     </Grid>

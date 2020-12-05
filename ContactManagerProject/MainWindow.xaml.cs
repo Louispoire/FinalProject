@@ -21,8 +21,35 @@ namespace ContactManagerProject
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
+    /*
+        public sealed class SingletonDB
+        {
+        private static readonly SingletonDB instance = new SingletonDB();
+        private readonly SqlConnection conn = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=contacts;Integrated Security=True");
 
+      
+        static SingletonDB()
+        {
+        }
 
+        private SingletonDB()
+        {
+        }
+
+        public static SingletonDB Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        public SqlConnection GetDBConnection()
+        {
+            return conn;
+        }
+    }
+    */
     public partial class MainWindow : Window
     {
         SqlConnection conn;
@@ -68,11 +95,11 @@ namespace ContactManagerProject
             cmd = new SqlCommand(qry, conn);
             if (cmd.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Successfully Save", "Successful");
+                MessageBox.Show("Successfully Created.");
             }
             else
             {
-                MessageBox.Show("Sorry Invalid Entry", "Error In Saving", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cannot Create Row.");
             }
             conn.Close();
         }
@@ -86,27 +113,27 @@ namespace ContactManagerProject
             if (cmd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Successfully Edited");
+                displayId.Text = displayEmail.Text = displayName.Text = displayAddress.Text = displayPhone.Text = string.Empty;
             }
             else
             {
-                MessageBox.Show("Sorry Invalid Entry", "Error In Saving", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cannot Edit. Please Stanby!");
             }
             conn.Close();
         }
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            string qry = "UPDATE contact SET id='" + idBox.Text + "',name='" + nameBox.Text + "',phone='" +
-            mobileBox.Text + "',email='" + emailBox.Text + "',address='" + addressBox.Text + "'";
+            //Insert delete here
+            string qry = "";
             conn.Open();
             cmd = new SqlCommand(qry, conn);
             if (cmd.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Successfully Save");
+                MessageBox.Show("Row Deleted.");
             }
             else
             {
-                MessageBox.Show("Sorry Invalid Entry", "Error In Saving", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cannot Delete Row.");
             }
             conn.Close();
         }
