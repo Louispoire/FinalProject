@@ -17,6 +17,7 @@ using System.Data.SqlClient;
 
 namespace ContactManagerProject
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -74,7 +75,7 @@ namespace ContactManagerProject
         }
         private void NewBtn_Click(object sender, RoutedEventArgs e)
         {
-            nameBox.Text = idBox.Text = searchBox.Text =
+            nameBox.Text = searchBox.Text =
             emailBox.Text = addressBox.Text = mobileBox.Text = string.Empty;
 
             displayId.Text = displayEmail.Text = displayName.Text = displayAddress.Text = displayPhone.Text = string.Empty;
@@ -89,14 +90,13 @@ namespace ContactManagerProject
         }
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            string qry = "INSERT INTO contact(id, name, phone, email, address) VALUES('" +idBox.Text + "', '" 
-            + nameBox.Text + "','" + mobileBox.Text + "', '" + emailBox.Text + "','" + addressBox.Text + "')";
+            string qry = "INSERT INTO contact(name, phone, email, address) VALUES('" + nameBox.Text + "','" + mobileBox.Text + "', '" + emailBox.Text + "','" + addressBox.Text + "')";
             conn.Open();
             cmd = new SqlCommand(qry, conn);
             if (cmd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Successfully Created.");
-                nameBox.Text = idBox.Text = searchBox.Text =
+                nameBox.Text = searchBox.Text =
                 emailBox.Text = addressBox.Text = mobileBox.Text = string.Empty;
             }
             else
@@ -145,31 +145,42 @@ namespace ContactManagerProject
         {
             if (searchBox.Text.All(char.IsDigit))
             {
-                conn.Open();
-                string idSearch = searchBox.Text;
-                string qry = "SELECT * FROM contact WHERE id= @id";
-                cmd = new SqlCommand(qry, conn);
-                cmd.Parameters.AddWithValue("@id", idSearch);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                        //Here we enabled this form for editing
-                        EditBtn.IsEnabled = true;
-                        DeleteBtn.IsEnabled = true;
-                        displayName.IsEnabled = true;
-                        displayPhone.IsEnabled = true;
-                        displayEmail.IsEnabled = true;
-                        displayAddress.IsEnabled = true;
-                        displayId.Text = searchBox.Text;
+                    string idSearch = searchBox.Text;
+                    if (idSearch != string.Empty)
+                    {
+                    conn.Open();
+                    string qry = "SELECT * FROM contact WHERE id= @id";
+                    cmd = new SqlCommand(qry, conn);
+                    cmd.Parameters.AddWithValue("@id", idSearch);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                            //Here we enabled this form for editing
+                            EditBtn.IsEnabled = true;
+                            DeleteBtn.IsEnabled = true;
+                            displayName.IsEnabled = true;
+                            displayPhone.IsEnabled = true;
+                            displayEmail.IsEnabled = true;
+                            displayAddress.IsEnabled = true;
+                            displayId.Text = searchBox.Text;
 
-                        //The next lines are displaying the informations on the form
-                        displayName.Text = reader["name"].ToString();
-                        displayPhone.Text = reader["phone"].ToString();
-                        displayEmail.Text = reader["email"].ToString();
-                        displayAddress.Text = reader["address"].ToString();
+                            //The next lines are displaying the informations on the form
+                            displayName.Text = reader["name"].ToString();
+                            displayPhone.Text = reader["phone"].ToString();
+                            displayEmail.Text = reader["email"].ToString();
+                            displayAddress.Text = reader["address"].ToString();
+
+
+                            MessageBox.Show("Name: " +reader["name"].ToString()+ "\n Phone: " +reader["phone"].ToString()+ "\n Email: " +reader["email"].ToString()+ "\n Address: " +reader["address"].ToString());
                  
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+                else
+                {
+                    MessageBox.Show("Please enter a number. Thank you");
+                    searchBox.Text = string.Empty;
+                }
             }
             else
             {
