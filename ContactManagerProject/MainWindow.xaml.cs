@@ -96,6 +96,8 @@ namespace ContactManagerProject
             if (cmd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Successfully Created.");
+                nameBox.Text = idBox.Text = searchBox.Text =
+                emailBox.Text = addressBox.Text = mobileBox.Text = string.Empty;
             }
             else
             {
@@ -106,10 +108,12 @@ namespace ContactManagerProject
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             string idSearch = searchBox.Text;
-            string qry = "UPDATE contact SET name='" + displayName.Text + "',phone='" +
-            displayPhone.Text + "',email='" + displayEmail.Text + "',address='" + displayAddress.Text + "' WHERE id ='" + idSearch + "'";
             conn.Open();
+            string qry = "UPDATE contact SET name='" + displayName.Text + "',phone='" +
+            displayPhone.Text + "',email='" + displayEmail.Text + "',address='" + displayAddress.Text + "' WHERE id = @id";
             cmd = new SqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@id", idSearch);
+            
             if (cmd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Successfully Edited");
@@ -141,13 +145,15 @@ namespace ContactManagerProject
         {
             if (searchBox.Text.All(char.IsDigit))
             {
-                string idSearch = searchBox.Text;
-                string qry = "SELECT * FROM contact WHERE id=" + idSearch;
                 conn.Open();
+                string idSearch = searchBox.Text;
+                string qry = "SELECT * FROM contact WHERE id= @id";
                 cmd = new SqlCommand(qry, conn);
+                cmd.Parameters.AddWithValue("@id", idSearch);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                        //Here we enabled this form for editing
                         EditBtn.IsEnabled = true;
                         DeleteBtn.IsEnabled = true;
                         displayName.IsEnabled = true;
@@ -155,6 +161,8 @@ namespace ContactManagerProject
                         displayEmail.IsEnabled = true;
                         displayAddress.IsEnabled = true;
                         displayId.Text = searchBox.Text;
+
+                        //The next lines are displaying the informations on the form
                         displayName.Text = reader["name"].ToString();
                         displayPhone.Text = reader["phone"].ToString();
                         displayEmail.Text = reader["email"].ToString();
