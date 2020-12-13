@@ -5,18 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ContactManagerProject.Views">
     <Grid Background="#FFE8C15F" Height="574" Width="692">
-        <DataGrid AutoGenerateColumns="False" Height="259" HorizontalAlignment="Left" AlternatingRowBackground="Gray" Margin="25,177,0,0" x:Name="dataDisplay" ItemsSource="{Binding dataBinding}" VerticalAlignment="Top" Width="600" RowBackground="White">
-			<DataGrid.Columns>
-				<DataGridTextColumn Binding="{Binding id}" Width="100" Header="ID"/>
-				<DataGridTextColumn Binding="{Binding name}" Width="100" Header="Name"/>
-				<DataGridTextColumn Binding="{Binding phone}" Width="100" Header="Phone"/>
-				<DataGridTextColumn Binding="{Binding email}" Width="100" Header="Email"/>
-				<DataGridTextColumn Binding="{Binding address}" Width="100" Header="Address"/>
-			</DataGrid.Columns>
-		</DataGrid>
+        <DataGrid AutoGenerateColumns="False" Height="259" HorizontalAlignment="Center" AlternatingRowBackground="#FFE48CA9" FontWeight="Bold" Margin="25,185,467,0" x:Name="dataDisplay" ItemsSource="{Binding dataBinding}" VerticalAlignment="Top" Width="200" RowBackground="#FF7ABBF3" IsEnabled="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Width="100" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding name}" Width="100" Header="Name"/>
+                <!--<DataGridTextColumn Binding="{Binding phone}" Width="100" Header="Phone"/>
+                <DataGridTextColumn Binding="{Binding email}" Width="100" Header="Email"/>
+                <DataGridTextColumn Binding="{Binding address}" Width="100" Header="Address"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="All Users" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="50" Height="74" Width="218" FontWeight="Bold" Background="#FFDEAD30" Margin="207,14,0,0"/>
-        <!--<Button Content="Show All" Height="54" HorizontalAlignment="Left" Margin="257,102,0,0" x:Name="ShowAll" VerticalAlignment="Top" Width="110" Click="Show_Click" FontSize="20" FontWeight="Bold" />-->
         <Button Content="Show All" Height="54" HorizontalAlignment="Left" Margin="231,118,0,0" x:Name="ShowAll" VerticalAlignment="Top" Width="140" Click="ShowAll_Click" FontSize="20" FontWeight="Bold" />
-        <Button Content="Delete All" Height="54" HorizontalAlignment="Left" Margin="165,441,0,0" x:Name="DeleteAll" VerticalAlignment="Top" Width="140" Click="DeleteAll_Click" RenderTransformOrigin="-0.533,1.706" FontSize="20" FontWeight="Bold" />
+        <Button Content="Delete All" Height="54" HorizontalAlignment="Left" Margin="231,453,0,0" x:Name="DeleteAll" VerticalAlignment="Top" Width="140" Click="DeleteAll_Click" RenderTransformOrigin="-0.533,1.706" FontSize="20" FontWeight="Bold" />
+        <Button Content="View" x:Name="View" Height="54" Click="View_Click" Margin="267,213,347,307" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.006,0.556"/>
+        <TextBox x:Name="viewBox" Height="60" Margin="237,318,317,196" FontSize="40" TextAlignment="Center"/>
+        <TextBlock x:Name="displayView" Margin="388,185,93,130" Background="#FFDEAD30" FontSize="20" FontWeight="Bold" TextAlignment="Justify"/>
     </Grid>
 </UserControl>

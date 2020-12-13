@@ -8,12 +8,14 @@
              d:DesignHeight="450" d:DesignWidth="800" Height="540">
     <Grid Background="IndianRed">
         <Label Content="Delete an User" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12,10,0,0" Height="70" Width="369" FontSize="50" FontWeight="Bold" Background="#FFF54545"/>
+        <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,173,0,0" x:Name="searchedID" Text="ID:" FontSize="34" Width="52" VerticalAlignment="Top" FontWeight="Bold" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="12,221,0,0" x:Name="searchedPhone" Text="Name:" VerticalAlignment="Top" FontSize="34" Width="101" FontWeight="Bold" />
         <TextBlock Height="44" HorizontalAlignment="Left" Margin="12,277,0,0" x:Name="searchedMobile" Text="Phone:" VerticalAlignment="Top" FontSize="34" Width="108" FontWeight="Bold" />
         <TextBlock Height="46" HorizontalAlignment="Left" Margin="12,333,0,0" x:Name="searchedEmail" Text="Email:" VerticalAlignment="Top" FontSize="34" Width="108" FontWeight="Bold" />
         <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,391,0,0" x:Name="searchedAddress" Text="Address:" FontSize="34" Width="142" VerticalAlignment="Top" FontWeight="Bold" />
+        
 
-        <TextBox Height="47" HorizontalAlignment="Left" Margin="297,167,0,0" x:Name="displayId" VerticalAlignment="Top" Width="53" FontSize="30" TextAlignment="Center" />
+        <TextBox Height="47" HorizontalAlignment="Left" Margin="159,167,0,0" x:Name="displayId" VerticalAlignment="Top" Width="354" FontSize="30" TextAlignment="Center" />
         <TextBox Height="51" HorizontalAlignment="Left" Margin="159,219,0,0" x:Name="displayName" VerticalAlignment="Top" Width="354" FontSize="30" />
         <TextBox Height="45" HorizontalAlignment="Left" Margin="159,276,0,0" x:Name="displayPhone" VerticalAlignment="Top" Width="354" FontSize="30" />
         <TextBox Height="46" HorizontalAlignment="Left" Margin="159,332,0,0" x:Name="displayEmail" VerticalAlignment="Top" Width="354" FontSize="30" />

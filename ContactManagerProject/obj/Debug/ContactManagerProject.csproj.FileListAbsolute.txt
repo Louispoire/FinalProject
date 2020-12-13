@@ -64,3 +64,7 @@ C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactMa
 C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\UpdateUser.baml
 C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ExportUsers.g.cs
 C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ExportUsers.baml
+C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ExportUsers.g.cs
+C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ImportUsers.g.cs
+C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ExportUsers.baml
+C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ImportUsers.baml

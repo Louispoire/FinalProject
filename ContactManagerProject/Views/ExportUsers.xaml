@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:ContactManagerProject.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Gray">
-        <Button Content="Export to file" Height="54" HorizontalAlignment="Left" Margin="169,332,0,0" x:Name="ExportAll" VerticalAlignment="Top" Width="242" Click="ExportAll_Click" FontSize="20" FontWeight="Bold" />
+    <Grid Background="Salmon">
+        <Button Content="Export to CSV file" Height="54" HorizontalAlignment="Left" Margin="169,332,0,0" x:Name="ExportAll" VerticalAlignment="Top" Width="242" Click="ExportAll_Click" FontSize="20" FontWeight="Bold" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="10,219,0,0" x:Name="path" Text="File Path:" VerticalAlignment="Top" FontSize="34" Width="174" FontWeight="Bold" />
-        <TextBlock Height="51" HorizontalAlignment="Left" Margin="191,15,0,0" x:Name="exportInfo" Text="Instructions:" VerticalAlignment="Top" FontSize="34" Width="174" FontWeight="Bold" />
+        <TextBlock Height="51" HorizontalAlignment="Left" Margin="191,15,0,0" x:Name="exportInfo" Text="Instructions:" VerticalAlignment="Top" FontSize="34" Width="207" FontWeight="Bold" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="61,71,0,0" x:Name="exportInfo2" Text="1. Enter a file destination (full path)" VerticalAlignment="Top" FontSize="25" Width="602" FontWeight="Bold" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="61,103,0,0" x:Name="exportInfo3" Text="2. Make sure the file end with CSV" VerticalAlignment="Top" FontSize="25" Width="602" FontWeight="Bold" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="61,135,0,0" x:Name="exportInfo4" Text="3. Export table to CSV" VerticalAlignment="Top" FontSize="25" Width="602" FontWeight="Bold" />

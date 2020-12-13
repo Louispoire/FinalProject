@@ -28,6 +28,7 @@ namespace ContactManagerProject.Views
             InitializeComponent();
             DeleteAll.IsEnabled = false;
             ShowAll.IsEnabled = true;
+            View.IsEnabled = false;
 
             conn = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=contacts;Integrated Security=True");
         }
@@ -53,7 +54,7 @@ namespace ContactManagerProject.Views
             string address;
             DeleteAll.IsEnabled = true;
             ShowAll.IsEnabled = false;
-            //-\(O_O)/-
+            View.IsEnabled = true;
             string qry = "SELECT * FROM contact";
             conn.Open();
             cmd = new SqlCommand(qry, conn);
@@ -77,8 +78,6 @@ namespace ContactManagerProject.Views
 
         private void DeleteAll_Click(object sender, RoutedEventArgs e)
         {
-            //Truncate table
-
             MessageBoxResult result = MessageBox.Show("Are you sure you want to delete all users?", "Delete All Users", MessageBoxButton.YesNo, MessageBoxImage.Question);
             
             string qry = "DELETE FROM contact;";
@@ -86,17 +85,52 @@ namespace ContactManagerProject.Views
             cmd = new SqlCommand(qry, conn);
             if (result == MessageBoxResult.Yes)
             {
-                if (cmd.ExecuteNonQuery() == 1) //Doesn't equal one anymore don;t know why.
+                if (cmd.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Action Not Available.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Successfully Deleted All Users.", "Delete All Users", MessageBoxButton.OK, MessageBoxImage.Information);
+                    DeleteAll.IsEnabled = false;
+                    View.IsEnabled = false;
+                    displayView.Text = viewBox.Text = string.Empty;
+                    dataDisplay.Items.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Successfully Deleted All Users.", "Delete All Users", MessageBoxButton.OK, MessageBoxImage.Information);
-                    
+                    MessageBox.Show("Action Not Available.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             conn.Close();
+        }
+
+        private void View_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewBox.Text.All(char.IsDigit))
+            {
+                string idSearch = viewBox.Text;
+                if (idSearch != string.Empty)
+                {
+                    conn.Open();
+                    string qry = "SELECT * FROM contact WHERE id= @id";
+                    cmd = new SqlCommand(qry, conn);
+                    cmd.Parameters.AddWithValue("@id", idSearch);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    { 
+                        displayView.Text = ("Name: " + reader["name"].ToString() + "\nPhone: " + reader["phone"].ToString() + 
+                            "\nEmail: " + reader["email"].ToString() + "\nAddress: " + reader["address"].ToString());
+                    }
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a number. Thank you", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    viewBox.Text = string.Empty;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a number. Thank you", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                viewBox.Text = string.Empty;
+            }
         }
     }
 }

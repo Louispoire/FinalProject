@@ -29,7 +29,7 @@
         </DataTemplate>
     </Window.Resources>
 
-    <Grid >
+    <Grid Background="#474747">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -45,6 +45,9 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <Label x:Name="lblWelcome" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Content="Welcome To Database &#x0a;// LP put a decent title here xD" FontSize="40" FontWeight="ExtraBold" Foreground="White" TextOptions.TextFormattingMode="Display"/>
+        <Image x:Name="Book" Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" /> <!--- Add an image of a book? -->
 
         <DockPanel Background="DarkGray" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel Grid.RowSpan="5">
