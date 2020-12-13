@@ -48,13 +48,14 @@
 
         <DockPanel Background="DarkGray" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel Grid.RowSpan="5">
+                <TextBlock Height="51" x:Name="menu" Text="Menu" VerticalAlignment="Top" FontSize="34" Width="101" FontWeight="Bold" />
                 <Button Content="Add User" Height="40"  Click="AddUser_Click"/>
                 <Button Content="Show All Users" Height="40" Click="ShowAll_Click"/>
                 <Button Content="Update User" Height="40" Click="Update_Click"/>
                 <Button Content="Delete User" Height="40" Click="Delete_Click"/>
                 <Button Content="Import" Height="40" Click="Import_Click"/>
                 <Button Content="Export" Height="40" Click="Export_Click"/>
-                <Button Content="Quit" Height="40" Margin="0,230,0,0 " Click="Quit_Click"/>
+                <Button Content="Quit" Height="40" Margin="0,175,0,0 " Click="Quit_Click"/>
             </StackPanel>
         </DockPanel>
 
@@ -62,7 +63,7 @@
 
         <!--Buttons-->
 
-       
+
 
     </Grid>
 </Window>
