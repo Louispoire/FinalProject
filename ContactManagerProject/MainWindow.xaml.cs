@@ -55,7 +55,7 @@ namespace ContactManagerProject
     public partial class MainWindow : Window
     {
         SqlConnection conn;
-        SqlCommand cmd;
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -82,10 +82,18 @@ namespace ContactManagerProject
         {
             DataContext = new UpdateUserModel();
         }
+        private void Import_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ImportUsersModel();
+        }
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ExportUsersModel();
+        }
 
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to to exit he application?", "Quit Contact Manager", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to to exit the application?", "Quit Contact Manager", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(result == MessageBoxResult.Yes)
             {
                 FrmWindow.Close();

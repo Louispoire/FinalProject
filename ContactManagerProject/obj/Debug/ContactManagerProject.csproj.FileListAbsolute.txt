@@ -51,3 +51,16 @@ C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Contact
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\ContactManagerProject.exe
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\ContactManagerProject.pdb
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\ContactManagerProject.csprojAssemblyReference.cache
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\AddUser.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\DeleteUser.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ShowAllUsers.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\UpdateUser.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ImportUsers.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\AddUser.baml
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\DeleteUser.baml
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ImportUsers.baml
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ShowAllUsers.baml
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\UpdateUser.baml
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ExportUsers.g.cs
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\Views\ExportUsers.baml

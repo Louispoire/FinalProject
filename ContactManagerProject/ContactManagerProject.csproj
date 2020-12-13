@@ -60,6 +60,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\AddUserModel.cs" />
+    <Compile Include="ViewModels\ExportUsersModel.cs" />
+    <Compile Include="ViewModels\ImportUsersModel.cs" />
     <Compile Include="ViewModels\DeleteUserModel.cs" />
     <Compile Include="ViewModels\ShowAllUsersModel.cs" />
     <Compile Include="ViewModels\UpdateUserModel.cs" />
@@ -68,6 +70,12 @@
     </Compile>
     <Compile Include="Views\DeleteUser.xaml.cs">
       <DependentUpon>DeleteUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExportUsers.xaml.cs">
+      <DependentUpon>ExportUsers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportUsers.xaml.cs">
+      <DependentUpon>ImportUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShowAllUsers.xaml.cs">
       <DependentUpon>ShowAllUsers.xaml</DependentUpon>
@@ -92,6 +100,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeleteUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExportUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

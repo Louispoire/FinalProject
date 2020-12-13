@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\
 ContactManagerProject
 none
 false
 DEBUG;TRACE
-C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\App.xaml
-51055774153
+C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\App.xaml
+71710524921
 
-141091828486
+18-1966540103
 17956782100
-MainWindow.xaml;Views\AddUser.xaml;Views\DeleteUser.xaml;Views\ShowAllUsers.xaml;Views\UpdateUser.xaml;
+MainWindow.xaml;Views\AddUser.xaml;Views\DeleteUser.xaml;Views\ExportUsers.xaml;Views\ImportUsers.xaml;Views\ShowAllUsers.xaml;Views\UpdateUser.xaml;
 
 True
 

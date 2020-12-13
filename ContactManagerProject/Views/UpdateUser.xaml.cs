@@ -28,7 +28,6 @@ namespace ContactManagerProject.Views
             InitializeComponent();
 
             UpdateBtn.IsEnabled = false;
-            displayId.IsEnabled = false;
             displayName.IsEnabled = false;
             displayPhone.IsEnabled = false;
             displayEmail.IsEnabled = false;
@@ -49,7 +48,7 @@ namespace ContactManagerProject.Views
             if (cmd.ExecuteNonQuery() == 1) //Doesn't equal one anymore don;t know why.
             {
                 MessageBox.Show("Successfully Updated", "Update User", MessageBoxButton.OK, MessageBoxImage.Information);
-                displayId.Text = displayEmail.Text = displayName.Text = displayAddress.Text = displayPhone.Text = string.Empty;
+                displayEmail.Text = displayName.Text = displayAddress.Text = displayPhone.Text = string.Empty;
             }
             else
             {
@@ -78,8 +77,7 @@ namespace ContactManagerProject.Views
                         displayPhone.IsEnabled = true;
                         displayEmail.IsEnabled = true;
                         displayAddress.IsEnabled = true;
-                        displayId.Text = searchBox.Text;
-                        searchBox.Text = string.Empty;
+                        //searchBox.Text = string.Empty;
 
                         //The next lines are displaying the informations on the form
                         displayName.Text = reader["name"].ToString();

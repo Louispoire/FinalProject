@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ContactManagerProject"
+    "\\ContactManagerProject",
+    "\\ContactManagerProject\\ViewModels",
+    "\\ContactManagerProject\\Views"
   ],
-  "SelectedNode": "\\ContactManagerProject\\MainWindow.xaml.cs",
+  "SelectedNode": "\\ContactManagerProject.sln",
   "PreviewInSolutionExplorer": false
 }

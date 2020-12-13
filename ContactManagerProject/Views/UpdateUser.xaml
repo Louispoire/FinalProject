@@ -14,7 +14,7 @@
         <TextBlock Height="46" HorizontalAlignment="Left" Margin="12,333,0,0" x:Name="searchedEmail" Text="Email:" VerticalAlignment="Top" FontSize="34" Width="108" FontWeight="Bold" />
         <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,391,0,0" x:Name="searchedAddress" Text="Address:" FontSize="34" Width="142" VerticalAlignment="Top" FontWeight="Bold" />
 
-        <TextBox Height="47" HorizontalAlignment="Left" Margin="297,167,0,0" x:Name="displayId" VerticalAlignment="Top" Width="53" FontSize="30" TextAlignment="Center" />
+        
         <TextBox Height="51" HorizontalAlignment="Left" Margin="159,219,0,0" x:Name="displayName" VerticalAlignment="Top" Width="354" FontSize="30" />
         <TextBox Height="45" HorizontalAlignment="Left" Margin="159,276,0,0" x:Name="displayPhone" VerticalAlignment="Top" Width="354" FontSize="30" />
         <TextBox Height="46" HorizontalAlignment="Left" Margin="159,332,0,0" x:Name="displayEmail" VerticalAlignment="Top" Width="354" FontSize="30" />

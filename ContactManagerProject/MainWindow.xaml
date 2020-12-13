@@ -21,6 +21,12 @@
         <DataTemplate x:Name="updateTemplate" DataType="{x:Type viewmodels:UpdateUserModel}">
             <views:UpdateUser DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="importTemplate" DataType="{x:Type viewmodels:ImportUsersModel}">
+            <views:ImportUsers DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="exportTemplate" DataType="{x:Type viewmodels:ExportUsersModel}">
+            <views:ExportUsers DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid >
@@ -46,8 +52,8 @@
                 <Button Content="Show All Users" Height="40" Click="ShowAll_Click"/>
                 <Button Content="Update User" Height="40" Click="Update_Click"/>
                 <Button Content="Delete User" Height="40" Click="Delete_Click"/>
-                <Button Content="Import" Height="40"/>
-                <Button Content="Export" Height="40"/>
+                <Button Content="Import" Height="40" Click="Import_Click"/>
+                <Button Content="Export" Height="40" Click="Export_Click"/>
                 <Button Content="Quit" Height="40" Margin="0,230,0,0 " Click="Quit_Click"/>
             </StackPanel>
         </DockPanel>
@@ -56,17 +62,7 @@
 
         <!--Buttons-->
 
-        <!--
-		<DataGrid AutoGenerateColumns="False" Height="259" HorizontalAlignment="Left" AlternatingRowBackground="Red" Margin="12,174,0,0" x:Name="dataGrid1" VerticalAlignment="Top" Width="717" RowBackground="#FF4EFF00">
-			<DataGrid.Columns>
-				<DataGridTextColumn Binding="{Binding Name}" Width="100" Header="ID"/>
-				<DataGridTextColumn Binding="{Binding HOME}" Width="100" Header="Name"/>
-				<DataGridTextColumn Binding="{Binding MOBILE}" Width="100" Header="Phone"/>
-				<DataGridTextColumn Binding="{Binding EMAIL}" Width="100" Header="Email"/>
-				<DataGridTextColumn Binding="{Binding ADDRESS}" Width="100" Header="Address"/>
-			</DataGrid.Columns>
-		</DataGrid>
-		-->
+       
 
     </Grid>
 </Window>
