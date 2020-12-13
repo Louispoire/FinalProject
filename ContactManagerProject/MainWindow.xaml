@@ -55,7 +55,8 @@
                 <Button Content="Delete User" Height="40" Click="Delete_Click"/>
                 <Button Content="Import" Height="40" Click="Import_Click"/>
                 <Button Content="Export" Height="40" Click="Export_Click"/>
-                <Button Content="Quit" Height="40" Margin="0,175,0,0 " Click="Quit_Click"/>
+                <TextBlock Height="98" x:Name="info" Text="Created by&#x0a; Louis-Philippe Simard &#x0a; and &#x0a; Cristian Cantillo" VerticalAlignment="Top" FontSize="10" Width="143" FontWeight="Bold" />
+                <Button Content="Quit" Height="40" Margin="0,80,0,0 " Click="Quit_Click"/>
             </StackPanel>
         </DockPanel>
 
