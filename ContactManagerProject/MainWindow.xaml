@@ -1,45 +1,62 @@
-﻿<Window x:Class="ContactManagerProject.MainWindow"
+﻿<Window x:Name="FrmWindow" x:Class="ContactManagerProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactManagerProject"
+        xmlns:viewmodels="clr-namespace:ContactManagerProject.ViewModels"
+        xmlns:views="clr-namespace:ContactManagerProject.Views"
         mc:Ignorable="d"
                 Title="Contact Manager System" Height="506" Width="763" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-	<Grid>
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="28,40,0,0" x:Name="textBlock2" Text="Name:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="23,69,0,0" x:Name="textBlock3" Text="Phone:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="32,97,0,0" x:Name="textBlock4" Text="Email:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="18,129,0,0" x:Name="textBlock5" Text="Address:" VerticalAlignment="Top" />
-		
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="579,46,0,0" x:Name="textBlock6" Text="Search in database:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="610,152,0,0" x:Name="result" Text="RESULT" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="482,218,0,0" x:Name="searchedPhone" Text="Name:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="480,262,0,0" x:Name="searchedMobile" Text="Phone:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="485,304,0,0" x:Name="searchedEmail" Text="Email:" VerticalAlignment="Top" />
-		<TextBlock Height="23" HorizontalAlignment="Left" Margin="471,341,0,0" x:Name="searchedAddress" Text="Address:" VerticalAlignment="Top" />
+    <Window.Resources>
+        <DataTemplate x:Name="addTemplate" DataType="{x:Type viewmodels:AddUserModel}">
+            <views:AddUser DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="showAllTemplate" DataType="{x:Type viewmodels:ShowAllUsersModel}">
+            <views:ShowAllUsers DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="deleteTemplate" DataType="{x:Type viewmodels:DeleteUserModel}">
+            <views:DeleteUser DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="updateTemplate" DataType="{x:Type viewmodels:UpdateUserModel}">
+            <views:UpdateUser DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
 
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,180,0,0" x:Name="displayId" VerticalAlignment="Top" Width="196" />
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,218,0,0" x:Name="displayName" VerticalAlignment="Top" Width="196" />
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,262,0,0" x:Name="displayPhone" VerticalAlignment="Top" Width="196" />
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,304,0,0" x:Name="displayEmail" VerticalAlignment="Top" Width="196" />
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,341,0,0" x:Name="displayAddress" VerticalAlignment="Top" Width="196" />
+    <Grid >
 
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="79,40,0,0" x:Name="nameBox" VerticalAlignment="Top" Width="220" />
-		<TextBox Height="23" HorizontalAlignment="Right" Margin="0,69,464,0" x:Name="mobileBox" VerticalAlignment="Top" Width="220" />
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="79,97,0,0" x:Name="emailBox" VerticalAlignment="Top" Width="220" />
-		<TextBox Height="24" HorizontalAlignment="Left" Margin="79,128,0,0" x:Name="addressBox" VerticalAlignment="Top" Width="220" TextWrapping="Wrap" AcceptsReturn="True"/>
-		<TextBox Height="23" HorizontalAlignment="Left" Margin="533,69,0,0" x:Name="searchBox" VerticalAlignment="Top" Width="196" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-		<!--Buttons-->
-		<Button Content="CREATE" Height="33" HorizontalAlignment="Left" Margin="326,87,0,0" x:Name="SaveBtn" VerticalAlignment="Top" Width="75" Click="SaveBtn_Click" />
-		<Button Content="DELETE" Height="33" HorizontalAlignment="Left" Margin="533,387,0,0" x:Name="DeleteBtn" VerticalAlignment="Top" Width="75" Click="DeleteBtn_Click" />
-		<Button Content="EDIT" Height="33" HorizontalAlignment="Left" Margin="654,387,0,0" x:Name="EditBtn" VerticalAlignment="Top" Width="75" Click="EditBtn_Click" />
-		<Button Content="CLEAR FORM" Height="33" HorizontalAlignment="Left" Margin="326,40,0,0" x:Name="NewBtn" VerticalAlignment="Top" Width="75" Click="NewBtn_Click" />
-		<Button Content="SEARCH" Height="33" HorizontalAlignment="Left" Margin="592,106,0,0" x:Name="SearchButton" VerticalAlignment="Top" Width="75" Click="Search_Click" />
-		<Border BorderThickness="5" Height="489" HorizontalAlignment="Left" x:Name="border1" VerticalAlignment="Top" Width="763"/>
+        <DockPanel Background="DarkGray" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
+            <StackPanel Grid.RowSpan="5">
+                <Button Content="Add User" Height="40"  Click="AddUser_Click"/>
+                <Button Content="Show All Users" Height="40" Click="ShowAll_Click"/>
+                <Button Content="Update User" Height="40" Click="Update_Click"/>
+                <Button Content="Delete User" Height="40" Click="Delete_Click"/>
+                <Button Content="Import" Height="40"/>
+                <Button Content="Export" Height="40"/>
+                <Button Content="Quit" Height="40" Margin="0,230,0,0 " Click="Quit_Click"/>
+            </StackPanel>
+        </DockPanel>
 
-		<!--
+        <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5" Content="{Binding}"/>
+
+        <!--Buttons-->
+
+        <!--
 		<DataGrid AutoGenerateColumns="False" Height="259" HorizontalAlignment="Left" AlternatingRowBackground="Red" Margin="12,174,0,0" x:Name="dataGrid1" VerticalAlignment="Top" Width="717" RowBackground="#FF4EFF00">
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{Binding Name}" Width="100" Header="ID"/>
@@ -50,6 +67,7 @@
 			</DataGrid.Columns>
 		</DataGrid>
 		-->
-	</Grid>
+
+    </Grid>
 </Window>
 

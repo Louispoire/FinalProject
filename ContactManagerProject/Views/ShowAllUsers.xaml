@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ContactManagerProject.Views.ShowAllUsers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ContactManagerProject.Views">
+    <Grid Background="#FFE8C15F" Height="574" Width="692">
+        <Label Content="All Users" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="50" Height="74" Width="218" FontWeight="Bold" Background="#FFDEAD30" Margin="207,14,0,0"/>
+        <Button Content="Edit All" Height="54" HorizontalAlignment="Left" Margin="340,454,0,0" x:Name="EditAll" VerticalAlignment="Top" Width="80" Click="EditAll_Click" FontSize="20" FontWeight="Bold" />
+        <Button Content="Delete All" Height="54" HorizontalAlignment="Left" Margin="178,454,0,0" x:Name="DeleteAll" VerticalAlignment="Top" Width="140" Click="DeleteAll_Click" RenderTransformOrigin="-0.533,1.706" FontSize="20" FontWeight="Bold" />
+
+    </Grid>
+</UserControl>
