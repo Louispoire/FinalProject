@@ -27,6 +27,7 @@ namespace ContactManagerProject.Views
         {
             InitializeComponent();
 
+            //value set to ON or OFF at the beginning
             UpdateBtn.IsEnabled = false;
             displayName.IsEnabled = false;
             displayPhone.IsEnabled = false;
@@ -38,14 +39,17 @@ namespace ContactManagerProject.Views
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
+            //Update the contact based on the searched id
             string idSearch = searchBox.Text;
             conn.Open();
+            //execute the update
             string qry = "UPDATE contact SET name='" + displayName.Text + "',phone='" +
             displayPhone.Text + "',email='" + displayEmail.Text + "',address='" + displayAddress.Text + "' WHERE id = @id";
             cmd = new SqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@id", idSearch);
 
-            if (cmd.ExecuteNonQuery() == 1) //Doesn't equal one anymore don;t know why.
+            //display various message depending on the results
+            if (cmd.ExecuteNonQuery() == 1) 
             {
                 MessageBox.Show("Successfully Updated", "Update User", MessageBoxButton.OK, MessageBoxImage.Information);
                 displayEmail.Text = displayName.Text = displayAddress.Text = displayPhone.Text = string.Empty;
@@ -59,11 +63,13 @@ namespace ContactManagerProject.Views
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
+            //Search user based on an ID
             if (searchBox.Text.All(char.IsDigit))
             {
                 string idSearch = searchBox.Text;
                 if (idSearch != string.Empty)
                 {
+                    //execute the search based on the ID
                     conn.Open();
                     string qry = "SELECT * FROM contact WHERE id= @id";
                     cmd = new SqlCommand(qry, conn);

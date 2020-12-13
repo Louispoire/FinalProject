@@ -68,4 +68,3 @@ C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\E
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ImportUsers.g.cs
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ExportUsers.baml
 C:\Users\crx62\Source\Repos\FinalProject\ContactManagerProject\obj\Debug\Views\ImportUsers.baml
-C:\Users\lpsim\Source\Repos\FinalProject_LouisPhilippeCristianCantillo\ContactManagerProject\obj\Debug\ContactManagerProject.csprojAssemblyReference.cache
