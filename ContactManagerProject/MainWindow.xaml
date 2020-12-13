@@ -46,22 +46,25 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="lblWelcome" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Content="Welcome To Database &#x0a;// LP put a decent title here xD" FontSize="40" FontWeight="ExtraBold" Foreground="White" TextOptions.TextFormattingMode="Display"/>
+        <Label x:Name="lblWelcome" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Content="Welcome To &#x0a;Database Pro Analysis™" FontSize="40" FontWeight="ExtraBold" Foreground="White" TextOptions.TextFormattingMode="Display"/>
+        <Label x:Name="lblWelcome1" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="4" Content="V.4.05" FontSize="30" FontWeight="ExtraBold" Foreground="White" TextOptions.TextFormattingMode="Display"/>
         <Image x:Name="Book" Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" /> <!--- Add an image of a book? -->
 
         <DockPanel Background="DarkGray" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel Grid.RowSpan="5">
                 <TextBlock Height="51" x:Name="menu" Text="Menu" VerticalAlignment="Top" FontSize="34" Width="101" FontWeight="Bold" />
-                <Button Content="Add User" Height="40"  Click="AddUser_Click"/>
-                <Button Content="Show All Users" Height="40" Click="ShowAll_Click"/>
-                <Button Content="Update User" Height="40" Click="Update_Click"/>
-                <Button Content="Delete User" Height="40" Click="Delete_Click"/>
+                <Button Content="Add Contact" Height="40"  Click="AddUser_Click"/>
+                <Button Content="Show All Contact" Height="40" Click="ShowAll_Click"/>
+                <Button Content="Update Contact" Height="40" Click="Update_Click"/>
+                <Button Content="Delete Contact" Height="40" Click="Delete_Click"/>
                 <Button Content="Import" Height="40" Click="Import_Click"/>
                 <Button Content="Export" Height="40" Click="Export_Click"/>
                 <TextBlock Height="98" x:Name="info" Text="Created by&#x0a; Louis-Philippe Simard &#x0a; and &#x0a; Cristian Cantillo" VerticalAlignment="Top" FontSize="10" Width="143" FontWeight="Bold" />
                 <Button Content="Quit" Height="40" Margin="0,80,0,0 " Click="Quit_Click"/>
             </StackPanel>
         </DockPanel>
+
+
 
         <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5" Content="{Binding}"/>
 
